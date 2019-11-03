@@ -62,7 +62,6 @@ class CommodityView(ViewSetMixin, APIView):
             'code': 1000,
             'data': None
         }
-        custom_attribute_list = []
         name = request.data.get('name')
         commodity_img = request.data.get('commodity_img')
         brief = request.data.get('brief')
@@ -95,12 +94,14 @@ class CommodityView(ViewSetMixin, APIView):
                 brand=brand,
                 commodity=models.CommodityDetail.objects.filter(commodity=models.Commodity.objects.filter(name=name).first()).first(),
             )
-            for custom_name in custom_attribute:
-                obj = models.CustomAttribute(name=custom_name, val=custom_attribute[custom_name],
-                                             commodity=models.CommodityDetail.objects.filter(
-                                                 commodity=models.Commodity.objects.filter(name=name).first()).first())
-                custom_attribute_list.append(obj)
-            models.CustomAttribute.objects.bulk_create(custom_attribute_list)
+            if custom_attribute:
+                custom_attribute_list = []
+                for custom_name in custom_attribute:
+                    obj = models.CustomAttribute(name=custom_name, val=custom_attribute[custom_name],
+                                                 commodity=models.CommodityDetail.objects.filter(
+                                                     commodity=models.Commodity.objects.filter(name=name).first()).first())
+                    custom_attribute_list.append(obj)
+                models.CustomAttribute.objects.bulk_create(custom_attribute_list)
             for img_name in commodity_detail_img:
                 models.CommodityDetailImg.objects.create(
                     img='apps/static/commoditydetailimg/' + img_name,
