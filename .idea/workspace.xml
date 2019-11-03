@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c4106cf-b474-40c4-a12e-714230d78e36" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0c8a965d-e94f-4fb9-acb9-b359c571f672.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0c8a965d-e94f-4fb9-acb9-b359c571f672.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/admins/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admins/views/account.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/admins/views/commodity.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admins/views/commodity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/serializers/commodity.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/serializers/commodity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,11 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/admins/views/uploads.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="190">
+              <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -65,16 +63,16 @@
         <entry file="file://$PROJECT_DIR$/microapp/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
-              <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="149" />
+              <caret line="149" selection-start-line="149" selection-end-line="149" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/admins/views/commodity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="112" column="33" lean-forward="true" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+            <state relative-caret-position="890">
+              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -121,11 +119,13 @@
         <option value="$PROJECT_DIR$/apps/admins/views/uploads.py" />
         <option value="$PROJECT_DIR$/apps/serializers/commodity.py" />
         <option value="$PROJECT_DIR$/apps/admins/auth/auth.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/apps/admins/views/account.py" />
-        <option value="$PROJECT_DIR$/apps/admins/views/commodity.py" />
         <option value="$PROJECT_DIR$/microapp/settings.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/star.sh" />
+        <option value="$PROJECT_DIR$/stop.sh" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/apps/admins/views/commodity.py" />
       </list>
     </option>
   </component>
@@ -140,6 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,47 +148,10 @@
               <item name="microapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="microapp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="microapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microapp" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microapp" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="admins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microapp" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="admins" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microapp" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="admins" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microapp" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="serializers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microapp" type="462c0819:PsiDirectoryNode" />
-              <item name="microapp" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -199,13 +163,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\microapp\apps\static\temporaryfolder" />
+      <recent name="D:\microapp\admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\microapp\apps\static\commoditydetailimg" />
       <recent name="D:\microapp\apps\static\temporaryfolder" />
       <recent name="D:\microapp\apps\admins\views" />
       <recent name="D:\microapp\apps\admins" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\microapp\admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -220,7 +186,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Django server.microapp">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="microapp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -286,23 +252,24 @@
       <workItem from="1572530872217" duration="4114000" />
       <workItem from="1572589057667" duration="15056000" />
       <workItem from="1572676259086" duration="17036000" />
-      <workItem from="1572765391695" duration="14777000" />
+      <workItem from="1572765391695" duration="15147000" />
+      <workItem from="1572800790962" duration="2873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50983000" />
+    <option name="totallyTimeSpent" value="54226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1934" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13180363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13287087" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.3239595" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.3239595" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -381,13 +348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commoditycategory">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/rest_framework/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12643">
@@ -401,9 +361,6 @@
           <caret line="266" column="8" selection-start-line="266" selection-start-column="8" selection-end-line="266" selection-end-column="8" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/static/temporaryfolder/下载.jpg">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/cors.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -423,41 +380,6 @@
       </provider>
     </entry>
     <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commoditysubcategory">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commodityattribute">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_customattribute">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commoditydetailimg">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commoditydetail">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commodity">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -522,16 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admins/views/uploads.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_auth">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -570,13 +482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/microapp/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="149" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admins/views/account.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
@@ -604,10 +509,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/stop.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/star.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/static/temporaryfolder/strawberry.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/static/temporaryfolder/strawberry1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/microapp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="149" selection-start-line="149" selection-end-line="149" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commoditydetail">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_customattribute">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commodityattribute">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commoditycategory">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commodity">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commoditydetailimg">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admins/views/commodity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="112" column="33" lean-forward="true" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+        <state relative-caret-position="890">
+          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/static/commoditydetailimg/下载.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admins/views/uploads.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

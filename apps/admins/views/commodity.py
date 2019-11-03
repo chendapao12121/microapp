@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ViewSetMixin
 from apps.serializers.commodity import *
 from apps.admins.auth.auth import *
+from django.db import transaction
 import shutil
 
 
@@ -53,6 +54,7 @@ class CommodityView(ViewSetMixin, APIView):
 
         return Response(ret)
 
+    @transaction.atomic
     def add(self, request, *args, **kwargs):
         '''添加商品接口'''
         # APIView.authentication_classes = [Auth, ]  # 认证模块
@@ -77,7 +79,7 @@ class CommodityView(ViewSetMixin, APIView):
         try:
             models.Commodity.objects.create(
                 name=name,
-                commodity_img=commodity_img,
+                commodity_img='apps/static/commodityimg/' + commodity_img.split('/')[3],
                 brief=brief,
                 category=models.CommoditySubCategory.objects.filter(name=category).first(),
                 have_discount=have_discount,
@@ -100,13 +102,17 @@ class CommodityView(ViewSetMixin, APIView):
                 custom_attribute_list.append(obj)
             models.CustomAttribute.objects.bulk_create(custom_attribute_list)
             for img_name in commodity_detail_img:
-                shutil.move(commodity_detail_img[img_name], 'apps/static/commoditydetailimg')
                 models.CommodityDetailImg.objects.create(
                     img='apps/static/commoditydetailimg/' + img_name,
                     commodity=models.CommodityDetail.objects.filter(
                         commodity=models.Commodity.objects.filter(name=name).first()
                     ).first()
                 )
+            obj = models.Commodity.objects.filter(name=name).first()
+            if obj:
+                for img_name in commodity_detail_img:
+                    shutil.move(commodity_detail_img[img_name], 'apps/static/commoditydetailimg')
+                shutil.move(commodity_img, 'apps/static/commodityimg')
             ret["data"] = "添加成功！"
         except Exception as e:
             ret["code"] = 2002
