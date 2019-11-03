@@ -108,7 +108,7 @@ class CommodityView(ViewSetMixin, APIView):
                     ).first()
                 )
             ret["data"] = "添加成功！"
-        except IOError as i:
+        except Exception as e:
             ret["code"] = 2002
             ret["data"] = "添加失败！"
         return Response(ret)

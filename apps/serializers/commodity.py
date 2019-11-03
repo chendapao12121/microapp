@@ -9,6 +9,7 @@ class CommoditySerializer(serializers.ModelSerializer):
         # fields = ['id', 'name','category', 'commodity_img', 'brief', 'price']
         fields = '__all__'
 
+
 class CommodityDetailSerializer(serializers.ModelSerializer):
     name = serializers.CharField(source='commodity.name')
     img = serializers.SerializerMethodField(method_name='get_img')
