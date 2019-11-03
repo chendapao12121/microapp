@@ -142,7 +142,7 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES':['rest_framework.renderers.JSONRenderer','rest_framework.renderers.BrowsableAPIRenderer',],
-
+    "DEFAULT_AUTHENTICATION_CLASSES":["apps.admins.auth.auth.Auth",],
     'DEFAULT_VERSIONING_CLASS':'rest_framework.versioning.URLPathVersioning', # 默认版本解析
     'DEFAULT_VERSION':'v1',# 默认版本
     'ALLOWED_VERSIONS':['v1','v2'], # 允许的版本
