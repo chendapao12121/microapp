@@ -54,7 +54,6 @@ class CommodityView(ViewSetMixin, APIView):
 
         return Response(ret)
 
-    @transaction.atomic
     def add(self, request, *args, **kwargs):
         '''添加商品接口'''
         # APIView.authentication_classes = [Auth, ]  # 认证模块
@@ -75,45 +74,52 @@ class CommodityView(ViewSetMixin, APIView):
         custom_attribute = request.data.get('custom_attribute')
         commodity_detail_img = request.data.get('commodity_detail_img')
         try:
-            models.Commodity.objects.create(
-                name=name,
-                commodity_img='http://118.89.54.143:8000/static/commodityimg/'.encode('utf-8')+commodity_img.split('/')[-1].encode('utf-8'),
-                brief=brief,
-                category=models.CommoditySubCategory.objects.filter(name=category).first(),
-                have_discount=have_discount,
-                discount=discount,
-                price=price
-            )
-            models.CommodityDetail.objects.create(
-                commodity=models.Commodity.objects.filter(name=name).first(),
-                detail=detail
-            )
-            models.CommodityAttribute.objects.create(
-                area=area,
-                brand=brand,
-                commodity=models.CommodityDetail.objects.filter(commodity=models.Commodity.objects.filter(name=name).first()).first(),
-            )
-            if custom_attribute:
-                custom_attribute_list = []
-                for custom_name in custom_attribute:
-                    obj = models.CustomAttribute(name=custom_name, val=custom_attribute[custom_name],
-                                                 commodity=models.CommodityDetail.objects.filter(
-                                                     commodity=models.Commodity.objects.filter(name=name).first()).first())
-                    custom_attribute_list.append(obj)
-                models.CustomAttribute.objects.bulk_create(custom_attribute_list)
-            for img_name in commodity_detail_img:
-                models.CommodityDetailImg.objects.create(
-                    img='http://118.89.54.143:8000/static/commoditydetailimg/'.encode('utf-8')+img_name.encode('utf-8'),
-                    commodity=models.CommodityDetail.objects.filter(
-                        commodity=models.Commodity.objects.filter(name=name).first()
-                    ).first()
+            with transaction.atomic():
+                sid = transaction.savepoint()  # 设置事务回滚点
+                models.Commodity.objects.create(
+                    name=name,
+                    commodity_img='http://118.89.54.143:8000/static/commodityimg/'.encode('utf-8')+commodity_img.split('/')[-1].encode('utf-8'),
+                    brief=brief,
+                    category=models.CommoditySubCategory.objects.filter(name=category).first(),
+                    have_discount=have_discount,
+                    discount=discount,
+                    price=price
                 )
-            obj = models.Commodity.objects.filter(name=name).first()
-            if obj:
+                models.CommodityDetail.objects.create(
+                    commodity=models.Commodity.objects.filter(name=name).first(),
+                    detail=detail
+                )
+                models.CommodityAttribute.objects.create(
+                    area=area,
+                    brand=brand,
+                    commodity=models.CommodityDetail.objects.filter(commodity=models.Commodity.objects.filter(name=name).first()).first(),
+                )
+                if custom_attribute:
+                    custom_attribute_list = []
+                    for custom_name in custom_attribute:
+                        obj = models.CustomAttribute(name=custom_name, val=custom_attribute[custom_name],
+                                                     commodity=models.CommodityDetail.objects.filter(
+                                                         commodity=models.Commodity.objects.filter(name=name).first()).first())
+                        custom_attribute_list.append(obj)
+                    models.CustomAttribute.objects.bulk_create(custom_attribute_list)
                 for img_name in commodity_detail_img:
-                    shutil.move(os.path.dirname(os.path.dirname(os.path.dirname(os.getcwd())))+'/static/temporaryfolder/'+img_name, os.path.dirname(os.path.dirname(os.path.dirname(os.getcwd())))+'/static/commoditydetailimg')
-                shutil.move(os.path.dirname(os.path.dirname(os.path.dirname(os.getcwd())))+'/static/temporaryfolder/'+commodity_img.split('/')[-1], os.path.dirname(os.path.dirname(os.getcwd()))+'/static/commodityimg')
-                ret["data"] = "添加成功！"
+                    models.CommodityDetailImg.objects.create(
+                        img='http://118.89.54.143:8000/static/commoditydetailimg/'.encode('utf-8')+img_name.encode('utf-8'),
+                        commodity=models.CommodityDetail.objects.filter(
+                            commodity=models.Commodity.objects.filter(name=name).first()
+                        ).first()
+                    )
+                obj = models.Commodity.objects.filter(name=name).first()
+                if obj:
+                    try:
+                        for img_name in commodity_detail_img:
+                            shutil.move(os.getcwd()+'/apps/static/temporaryfolder/'+img_name, os.getcwd()+'/apps/static/commoditydetailimg')
+                        shutil.move(os.getcwd()+'/apps/static/temporaryfolder/'+commodity_img.split('/')[-1], os.getcwd()+'/apps/static/commodityimg')
+                        ret["data"] = "添加成功！"
+                    except Exception:
+                        transaction.savepoint_rollback(sid)
+                        ret["code"] = 2002
+                        ret["data"] = "添加失败！"
         except Exception as e:
             ret["code"] = 2002
             ret["data"] = "添加失败！"
