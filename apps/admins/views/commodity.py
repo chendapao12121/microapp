@@ -73,54 +73,54 @@ class CommodityView(ViewSetMixin, APIView):
         brand = request.data.get('brand')
         custom_attribute = request.data.get('custom_attribute')
         commodity_detail_img = request.data.get('commodity_detail_img')
-        # try:
-        #     with transaction.atomic():
-        #         sid = transaction.savepoint()  # 设置事务回滚点
-        #         models.Commodity.objects.create(
-        #             name=name,
-        #             commodity_img='http://118.89.54.143:8000/static/commodityimg/'.encode('utf-8')+commodity_img.split('/')[-1].encode('utf-8'),
-        #             brief=brief,
-        #             category=models.CommoditySubCategory.objects.filter(name=category).first(),
-        #             have_discount=have_discount,
-        #             discount=discount,
-        #             price=price
-        #         )
-        #         models.CommodityDetail.objects.create(
-        #             commodity=models.Commodity.objects.filter(name=name).first(),
-        #             detail=detail
-        #         )
-        #         models.CommodityAttribute.objects.create(
-        #             area=area,
-        #             brand=brand,
-        #             commodity=models.CommodityDetail.objects.filter(commodity=models.Commodity.objects.filter(name=name).first()).first(),
-        #         )
-        #         if custom_attribute:
-        #             custom_attribute_list = []
-        #             for custom_name in custom_attribute:
-        #                 obj = models.CustomAttribute(name=custom_name, val=custom_attribute[custom_name],
-        #                                              commodity=models.CommodityDetail.objects.filter(
-        #                                                  commodity=models.Commodity.objects.filter(name=name).first()).first())
-        #                 custom_attribute_list.append(obj)
-        #             models.CustomAttribute.objects.bulk_create(custom_attribute_list)
-        #         for img_name in commodity_detail_img:
-        #             models.CommodityDetailImg.objects.create(
-        #                 img='http://118.89.54.143:8000/static/commoditydetailimg/'.encode('utf-8')+img_name.encode('utf-8'),
-        #                 commodity=models.CommodityDetail.objects.filter(
-        #                     commodity=models.Commodity.objects.filter(name=name).first()
-        #                 ).first()
-        #             )
-        #         obj = models.Commodity.objects.filter(name=name).first()
-        #         if obj:
-        #             try:
-        for img_name in commodity_detail_img:
-            print(os.getcwd()+'/apps/static/temporaryfolder/'+img_name, os.getcwd()+'/apps/static/commoditydetailimg')
-        print(os.getcwd()+'/apps/static/temporaryfolder/'+commodity_img.split('/')[-1], os.getcwd()+'/apps/static/commodityimg')
-                        # ret["data"] = "添加成功！"
-        #             except Exception:
-        #                 transaction.savepoint_rollback(sid)
-        #                 ret["code"] = 2002
-        #                 ret["data"] = "添加失败！文件路径出错！"
-        # except Exception as e:
-        #     ret["code"] = 2002
-        #     ret["data"] = "添加失败！"
+        try:
+            with transaction.atomic():
+                sid = transaction.savepoint()  # 设置事务回滚点
+                models.Commodity.objects.create(
+                    name=name,
+                    commodity_img='http://118.89.54.143:8000/static/commodityimg/'.encode('utf-8')+commodity_img.split('/')[-1].encode('utf-8'),
+                    brief=brief,
+                    category=models.CommoditySubCategory.objects.filter(name=category).first(),
+                    have_discount=have_discount,
+                    discount=discount,
+                    price=price
+                )
+                models.CommodityDetail.objects.create(
+                    commodity=models.Commodity.objects.filter(name=name).first(),
+                    detail=detail
+                )
+                models.CommodityAttribute.objects.create(
+                    area=area,
+                    brand=brand,
+                    commodity=models.CommodityDetail.objects.filter(commodity=models.Commodity.objects.filter(name=name).first()).first(),
+                )
+                if custom_attribute:
+                    custom_attribute_list = []
+                    for custom_name in custom_attribute:
+                        obj = models.CustomAttribute(name=custom_name, val=custom_attribute[custom_name],
+                                                     commodity=models.CommodityDetail.objects.filter(
+                                                         commodity=models.Commodity.objects.filter(name=name).first()).first())
+                        custom_attribute_list.append(obj)
+                    models.CustomAttribute.objects.bulk_create(custom_attribute_list)
+                for img_name in commodity_detail_img:
+                    models.CommodityDetailImg.objects.create(
+                        img='http://118.89.54.143:8000/static/commoditydetailimg/'.encode('utf-8')+img_name.encode('utf-8'),
+                        commodity=models.CommodityDetail.objects.filter(
+                            commodity=models.Commodity.objects.filter(name=name).first()
+                        ).first()
+                    )
+                obj = models.Commodity.objects.filter(name=name).first()
+                if obj:
+                    try:
+                        for img_name in commodity_detail_img:
+                            print(os.getcwd()+'/apps/static/temporaryfolder/'+img_name, os.getcwd()+'/apps/static/commoditydetailimg')
+                        print(os.getcwd()+'/apps/static/temporaryfolder/'+commodity_img.split('/')[-1], os.getcwd()+'/apps/static/commodityimg')
+                        ret["data"] = "添加成功！"
+                    except Exception:
+                        transaction.savepoint_rollback(sid)
+                        ret["code"] = 2002
+                        ret["data"] = "添加失败！文件路径出错！"
+        except Exception as e:
+            ret["code"] = 2002
+            ret["data"] = "添加失败！"
         return Response(ret)
