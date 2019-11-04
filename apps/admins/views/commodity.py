@@ -111,8 +111,8 @@ class CommodityView(ViewSetMixin, APIView):
             obj = models.Commodity.objects.filter(name=name).first()
             if obj:
                 for img_name in commodity_detail_img:
-                    shutil.move(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/static/temporaryfolder/'+img_name, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/static/commoditydetailimg')
-                shutil.move(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/static/temporaryfolder/'+commodity_img.split('/')[-1], os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/static/commodityimg')
+                    shutil.move(os.path.dirname(os.path.dirname(os.path.dirname(os.getcwd())))+'/static/temporaryfolder/'+img_name, os.path.dirname(os.path.dirname(os.path.dirname(os.getcwd())))+'/static/commoditydetailimg')
+                shutil.move(os.path.dirname(os.path.dirname(os.path.dirname(os.getcwd())))+'/static/temporaryfolder/'+commodity_img.split('/')[-1], os.path.dirname(os.path.dirname(os.getcwd()))+'/static/commodityimg')
                 ret["data"] = "添加成功！"
         except Exception as e:
             ret["code"] = 2002
