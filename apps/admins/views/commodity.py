@@ -4,7 +4,19 @@ from rest_framework.viewsets import ViewSetMixin
 from apps.serializers.commodity import *
 from apps.admins.auth.auth import *
 from django.db import transaction
+from rest_framework.pagination import PageNumberPagination,LimitOffsetPagination
 import os,shutil
+
+
+class MyPageNumberPagination(PageNumberPagination):
+    # 每一页显示多少条数据
+    page_size = 5
+    # 设置关键字
+    page_query_param = 'page'
+    # 设置临时每一页显示多少条数据
+    page_size_query_param = 'size'
+    # 每一页最多显示多少条,临时设置的也超不过这个数
+    max_page_size = 10
 
 
 class CommodityView(ViewSetMixin, APIView):
@@ -23,7 +35,9 @@ class CommodityView(ViewSetMixin, APIView):
         }
         try:
             queryset = models.Commodity.objects.all()
-            ser = CommoditySerializer(instance=queryset, many=True)
+            pnp = MyPageNumberPagination()
+            commodity_page = pnp.paginate_queryset(queryset,request,self)
+            ser = CommoditySerializer(commodity_page, many=True,context={"request":request})
             ret['data'] = ser.data
         except Exception as e:
             ret['code'] = 1001

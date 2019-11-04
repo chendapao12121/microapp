@@ -81,7 +81,7 @@ class Commodity(models.Model):
 
     class Meta:
         verbose_name_plural = "商品"
-
+        ordering = ['id']
 
 class CommodityDetail(models.Model):
     commodity = models.ForeignKey("Commodity")

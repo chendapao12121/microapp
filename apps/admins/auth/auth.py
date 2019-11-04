@@ -5,7 +5,7 @@ import time
 
 class Auth(BaseAuthentication):
     def authenticate(self, request):
-        token = request.query_params.get('token')  # = request.GET
+        token = request.META.get("HTTP_TOKEN")  # = request.GET
         obj = models.AdminToken.objects.filter(token=token).first()
         if not obj:
             # obj = models.UserToken.objects.filter(token=token).first()
