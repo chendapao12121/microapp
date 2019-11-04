@@ -15,6 +15,8 @@ class UploadView(APIView):
         # 获取多个file
         files = request.FILES.getlist('img',None)
         if files:  # 验证是否有图片文件上传
+
+            img_dic = {}
             for file_obj in files:
                 imgType = imghdr.what(file_obj)  # 验证是否为真图片
                 if imgType:
@@ -22,7 +24,8 @@ class UploadView(APIView):
                         for content in file_obj.chunks():
                             f.write(content)
                         f.close()
-                    ret[file_obj.name] = 'apps/static/temporaryfolder/'+file_obj.name
+
+                    img_dic[file_obj.name] = 'http://118.89.54.143:8000/static/temporaryfolder/'.encode('utf-8')+file_obj.name.encode('utf-8')
                 else:
                     ret["code"] = 2001
                     ret["msg"] = "上传图片失败！"

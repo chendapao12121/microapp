@@ -4,7 +4,7 @@ from rest_framework.viewsets import ViewSetMixin
 from apps.serializers.commodity import *
 from apps.admins.auth.auth import *
 from django.db import transaction
-import shutil
+import os,shutil
 
 
 class CommodityView(ViewSetMixin, APIView):
@@ -74,11 +74,10 @@ class CommodityView(ViewSetMixin, APIView):
         brand = request.data.get('brand')
         custom_attribute = request.data.get('custom_attribute')
         commodity_detail_img = request.data.get('commodity_detail_img')
-
         try:
             models.Commodity.objects.create(
                 name=name,
-                commodity_img='apps/static/commodityimg/' + commodity_img.split('/')[3],
+                commodity_img='http://118.89.54.143:8000/static/commodityimg/'.encode('utf-8')+commodity_img.split('/')[-1].encode('utf-8'),
                 brief=brief,
                 category=models.CommoditySubCategory.objects.filter(name=category).first(),
                 have_discount=have_discount,
@@ -104,7 +103,7 @@ class CommodityView(ViewSetMixin, APIView):
                 models.CustomAttribute.objects.bulk_create(custom_attribute_list)
             for img_name in commodity_detail_img:
                 models.CommodityDetailImg.objects.create(
-                    img='apps/static/commoditydetailimg/' + img_name,
+                    img='http://118.89.54.143:8000/static/commoditydetailimg/'.encode('utf-8')+img_name.encode('utf-8'),
                     commodity=models.CommodityDetail.objects.filter(
                         commodity=models.Commodity.objects.filter(name=name).first()
                     ).first()
@@ -112,9 +111,9 @@ class CommodityView(ViewSetMixin, APIView):
             obj = models.Commodity.objects.filter(name=name).first()
             if obj:
                 for img_name in commodity_detail_img:
-                    shutil.move(commodity_detail_img[img_name], 'apps/static/commoditydetailimg')
-                shutil.move(commodity_img, 'apps/static/commodityimg')
-            ret["data"] = "添加成功！"
+                    shutil.move(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/static/temporaryfolder/'+img_name, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/static/commoditydetailimg')
+                shutil.move(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/static/temporaryfolder/'+commodity_img.split('/')[-1], os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/static/commodityimg')
+                ret["data"] = "添加成功！"
         except Exception as e:
             ret["code"] = 2002
             ret["data"] = "添加失败！"

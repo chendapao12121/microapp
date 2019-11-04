@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2c4106cf-b474-40c4-a12e-714230d78e36" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/admins/views/commodity.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admins/views/commodity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/admins/views/uploads.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admins/views/uploads.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/admins/views/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/static/commoditydetailimg/strawberry1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/static/commoditydetailimg/strawberry2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/static/commodityimg/strawberry.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,13 +49,16 @@
     </expand>
     <select />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/admins/views/uploads.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+            <state relative-caret-position="339">
+              <caret line="27" column="71" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="71" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -61,10 +67,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/admins/views/test.py">
+        <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
-              <caret line="16" column="87" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="87" />
+              <caret line="16" column="87" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -81,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1881">
-              <caret line="104" column="51" selection-start-line="104" selection-start-column="51" selection-end-line="104" selection-end-column="51" />
+            <state relative-caret-position="855">
+              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
               <folding>
                 <element signature="e#0#81#0" expanded="true" />
               </folding>
@@ -90,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/admins/views/commodity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="818">
-              <caret line="114" column="69" selection-start-line="114" selection-start-column="69" selection-end-line="114" selection-end-column="69" />
+            <state relative-caret-position="2525">
+              <caret line="119" column="28" lean-forward="true" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -144,11 +150,11 @@
         <option value="$PROJECT_DIR$/microapp/settings.py" />
         <option value="$PROJECT_DIR$/star.sh" />
         <option value="$PROJECT_DIR$/stop.sh" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/apps/admins/views/commodity.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/apps/admins/views/test.py" />
         <option value="$PROJECT_DIR$/apps/admins/views/uploads.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/apps/admins/views/commodity.py" />
       </list>
     </option>
   </component>
@@ -185,7 +191,9 @@
             <path>
               <item name="microapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="microapp" type="462c0819:PsiDirectoryNode" />
-              <item name="microapp" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="commoditydetailimg" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -202,15 +210,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\microapp\apps\static\temporaryfolder" />
+      <recent name="D:\microapp" />
+      <recent name="D:\microapp\apps\admins\views" />
+      <recent name="D:\microapp\apps\admins" />
+      <recent name="D:\microapp\apps\static\commoditydetailimg" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\microapp\apps\static\temporaryfolder" />
       <recent name="D:\microapp\admin" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\microapp\apps\static\commoditydetailimg" />
-      <recent name="D:\microapp\apps\static\temporaryfolder" />
-      <recent name="D:\microapp\apps\admins\views" />
-      <recent name="D:\microapp\apps\admins" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -316,22 +325,23 @@
       <workItem from="1572676259086" duration="17036000" />
       <workItem from="1572765391695" duration="15147000" />
       <workItem from="1572800790962" duration="4242000" />
-      <workItem from="1572842598006" duration="2266000" />
+      <workItem from="1572842598006" duration="5746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57861000" />
+    <option name="totallyTimeSpent" value="61341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1934" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1339381" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.3239595" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.27221596" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -341,14 +351,14 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053364" side_tool="true" weight="0.24269663" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3048369" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3295838" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32921347" />
       <window_info anchor="bottom" id="调试" order="14" weight="0.3295838" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.32977587" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.32977587" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,6 +584,54 @@
     <entry file="file://$PROJECT_DIR$/apps/static/commoditydetailimg/下载.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="87" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+          <folding>
+            <element signature="e#0#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/microapp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="139" column="10" selection-start-line="139" selection-end-line="139" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admins/views/uploads.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="27" column="71" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_customattribute">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commoditydetailimg">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commodityattribute">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -588,20 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commoditydetailimg">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_customattribute">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://0c8a965d-e94f-4fb9-acb9-b359c571f672/schema/microapp/table/apps_commodity">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -609,44 +653,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1881">
-          <caret line="104" column="51" selection-start-line="104" selection-start-column="51" selection-end-line="104" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admins/views/commodity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="818">
-          <caret line="114" column="69" selection-start-line="114" selection-start-column="69" selection-end-line="114" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/microapp/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="139" column="10" selection-start-line="139" selection-end-line="139" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admins/views/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="87" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admins/views/uploads.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        <state relative-caret-position="2525">
+          <caret line="119" column="28" lean-forward="true" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
