@@ -2,7 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
 from apps.admins.auth.auth import *
-import imghdr
+from microapp.settings import STATIC_URL
+import imghdr,os
 
 
 class UploadView(APIView):
@@ -17,7 +18,7 @@ class UploadView(APIView):
             for file_obj in files:
                 imgType = imghdr.what(file_obj)  # 验证是否为真图片
                 if imgType:
-                    with open('apps/static/temporaryfolder/'+file_obj.name,'wb+') as f:
+                    with open(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/static/temporaryfolder/'+file_obj.name,'wb+') as f:
                         for content in file_obj.chunks():
                             f.write(content)
                         f.close()

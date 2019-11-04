@@ -11,3 +11,9 @@
 #
 # obj = models.Admin.objects.all()
 # print(obj)
+import os
+
+# dir_path = os.path.dirname(os.path.abspath(__file__))
+dir_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+print(dir_path)
+os.path.abspath(__file__)
