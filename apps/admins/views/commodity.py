@@ -113,8 +113,8 @@ class CommodityView(ViewSetMixin, APIView):
                 if obj:
                     try:
                         for img_name in commodity_detail_img:
-                            print(os.getcwd()+'/apps/static/temporaryfolder/'+img_name, os.getcwd()+'/apps/static/commoditydetailimg')
-                        print(os.getcwd()+'/apps/static/temporaryfolder/'+commodity_img.split('/')[-1], os.getcwd()+'/apps/static/commodityimg')
+                            shutil.move(os.getcwd()+'/apps/static/temporaryfolder/'+img_name, os.getcwd()+'/apps/static/commoditydetailimg')
+                        shutil.move(os.getcwd()+'/apps/static/temporaryfolder/'+commodity_img.split('/')[-1], os.getcwd()+'/apps/static/commodityimg')
                         ret["data"] = "添加成功！"
                     except Exception:
                         transaction.savepoint_rollback(sid)

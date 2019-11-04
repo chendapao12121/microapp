@@ -31,6 +31,7 @@ class UploadView(APIView):
                     ret["msg"] = "上传图片失败！"
                     return Response(ret)
             ret["msg"] = "上传图片成功！"
+            ret["img"] = img_dic
         else:
             ret["code"] = 2001
             ret["msg"] = "上传图片失败！"

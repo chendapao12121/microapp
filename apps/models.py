@@ -43,6 +43,7 @@ class Admin(models.Model):
 class AdminToken(models.Model):
     admin = models.OneToOneField(to=Admin)
     token = models.CharField(max_length=64,unique=True)
+    addtime = models.BigIntegerField()
 
 
 class CommodityCategory(models.Model):

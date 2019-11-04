@@ -3,10 +3,12 @@ from rest_framework.response import Response
 from apps import models
 from microapp.settings import SECRET_KEY
 from hashlib import md5
-import uuid
+import uuid,time
 
 
 class AuthView(APIView):
+    authentication_classes = []
+
     def post(self,request,*args,**kwargs):
         '''
         用户登录认证
@@ -23,7 +25,11 @@ class AuthView(APIView):
             ret['code'] = 1001
             ret['error'] = '用户名或密码错误'
         else:
-            uid = str(uuid.uuid4())
-            models.AdminToken.objects.update_or_create(admin_id=user.id,defaults={'token':uid})
-            ret['token'] = uid
+            token = models.AdminToken.objects.filter(admin_id=user.id).first()
+            if time.time() - token.addtime > 86400:
+                uid = str(uuid.uuid4())
+                models.AdminToken.objects.update_or_create(admin_id=user.id,defaults={"token":uid,"addtime":time.time()})
+                ret['token'] = uid
+            else:
+                ret['token'] = token.token
         return Response(ret)
